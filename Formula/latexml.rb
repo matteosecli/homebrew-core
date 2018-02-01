@@ -19,6 +19,8 @@ class Latexml < Formula
   depends_on "perl"                             # Actually, Imagemagick already installs Perl
   depends_on "imagemagick" => requires_perl     # Install ImageMagick with PerlMagick
   depends_on "ghostscript"
+  depends_on "libxml2" if MacOS.version <= :sierra
+  depends_on "libxslt" if MacOS.version <= :sierra
 
   #===# Perl Modules Dependencies (non-core as of 5.26.1) #===#
   # Archive::Zip => Test::MockModule
